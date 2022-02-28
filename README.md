@@ -1,7 +1,7 @@
 # Wine SteamCMD Docker Image
 <img alt="Docker Image Size (latest by date)" src="https://img.shields.io/docker/image-size/loefdev/wine-steamcmd"> <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/loef-dev/wine-steamcmd"> <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/loefdev/wine-steamcmd">
 
-A Container with the Wine compatability layer & SteamCMD used for hosting Windows based dedicated servers on linux hosts.
+A Docker container with the Wine compatability layer & SteamCMD used for hosting Windows based dedicated servers on linux hosts.
 
 ## Includes
 
