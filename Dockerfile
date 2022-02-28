@@ -3,14 +3,13 @@ WORKDIR /root
 
 # Install Dependencies
 RUN dpkg --add-architecture i386
-RUN apt-get update && apt-get upgrade -y && apt-get install -y\
+RUN apt-get update && apt-get install -y --no-install-recommends\
  curl\
  gnupg2\
  software-properties-common
 
 # Install Wine
-RUN apt-get update && apt-get upgrade -y &&\
-  curl https://dl.winehq.org/wine-builds/winehq.key | apt-key add - &&\
+RUN curl https://dl.winehq.org/wine-builds/winehq.key | apt-key add - &&\
   apt-add-repository https://dl.winehq.org/wine-builds/debian/ &&\
   apt-add-repository non-free &&\
   apt-get update
@@ -23,7 +22,7 @@ RUN apt-get install -f -y &&\
   rm *.deb
 
 # Install Steamcmd
-RUN echo steam steam/question select "I AGREE" | debconf-set-selections && apt-get update && apt-get install -y\
+RUN echo steam steam/question select "I AGREE" | debconf-set-selections && apt-get update && apt-get install -y --no-install-recommends\
  steamcmd
 
 RUN ln -s /usr/games/steamcmd /steamcmd
